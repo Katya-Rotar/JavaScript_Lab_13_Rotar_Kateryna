@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 13 Task 5</title>
+</head>
+<body>
+   <button onclick="clickButton()" onmouseover="clickMouseover()" onmouseout="clickMouseout()">Live button!</button>
+   <br>
+   <span id="message"></span>
+   <script>
+      function clickButton(){
+          var messageSpan = document.getElementById('message');
+          messageSpan.innerHTML += "I was pressed!<br>";
+      }
+  
+      function clickMouseover(){
+          var messageSpan = document.getElementById('message');
+          messageSpan.innerHTML += "Mouse on me!<br>";
+      }
+  
+      function clickMouseout(){
+          var messageSpan = document.getElementById('message');
+          messageSpan.innerHTML += "Mouse is not on me!<br>";
+      }
+  </script>  
+</body>
+</html>

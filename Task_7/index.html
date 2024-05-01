@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 13 Task 7</title>
+</head>
+<body>
+   <select name="country" id="country" onchange="populateCities()">
+      <option value="ger">Germany</option>
+      <option value="usa">USA</option>
+      <option value="ukr">Ukraine</option>
+   </select>
+                       
+   <select name="cities" id="cities"></select>
+   <p id="selectedInfo"></p>
+
+   <script>
+      function populateCities(){
+         var country = document.getElementById("country");
+         var citySelect = document.getElementById("cities");
+         var selectCountry = country.value;
+
+         citySelect.innerHTML = "";
+
+         var cities = [];
+         if(selectCountry == "ger"){
+            cities = ["Berlin", "Hamburg", "Munich"];
+         }else if (selectCountry === "usa"){
+            cities = ["New York", "Los Angeles", "Chicago"];
+         }else if (selectCountry == "ukr"){
+            cities = ["Kyiv", "Kharkiv", "Lviv"];
+         }
+
+         cities.forEach(function(city){
+            var option = document.createElement("option");
+            option.text = city;
+            option.value = city;
+            citySelect.add(option);
+         })
+      }
+      populateCities();
+   </script>
+</body>
+</html>
